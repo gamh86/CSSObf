@@ -138,7 +138,7 @@ _get_chunk_for_pos(buf_t *buf, char *pos)
 
 	for (ch = buf->head; ch; ch = ch->next)
 	{
-		if (pos >= ch->data && pos < ch->end)
+		if (IS_IN_CHUNK(pos,ch))
 			return ch;
 	}
 
