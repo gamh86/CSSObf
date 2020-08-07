@@ -368,6 +368,7 @@ buf_read_socket(buf_t *buf, int sock, size_t len, int flags)
 		retval = _read_socket(sock, buf->pos, r, flags);
 		assert(0 < retval);
 
+		buf->pos += len;
 		DLEN_ADD(nch,r);
 	}
 
@@ -418,6 +419,7 @@ buf_read_fd(buf_t *buf, int fd, size_t len)
 		retval = _read_fd(fd, buf->pos, r);
 		assert(0 < retval);
 
+		buf->pos += r;
 		DLEN_ADD(nch,r);
 	}
 
