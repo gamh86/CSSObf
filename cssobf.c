@@ -153,7 +153,7 @@ css_hash_classes(char *file)
 				{
 					sprintf(name, "_%hx", n);
 					++n;
-					BUCKET_put_data(bObj, key, (void *)name, len2, 0);
+					BUCKET_put_data(bObj, key, (void *)name, strlen(name), 0);
 #ifdef DEBUG
 					fprintf(stderr, "Stored \"%s\" with value \"%s\"\n", key, name);
 #endif
