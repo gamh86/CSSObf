@@ -266,6 +266,7 @@ obfuscate_files_in_dir(char *dir)
 		buf_write_fd(buf, fd);
 		close(fd);
 		buf_free(buf);
+		free(fout);
 	}
 
 	return 0;
