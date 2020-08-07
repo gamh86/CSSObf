@@ -113,17 +113,6 @@ DBG(char *fmt, ...)
 }
 
 static void
-PR(char *pos)
-{
-#ifdef DEBUG
-	fprintf(stderr, "%*.*s\n", 64, 64, pos - 32);
-#else
-	(void)pos;
-#endif
-	return;
-}
-
-static void
 _add_chunk(buf_t *buf, chunk_t *ch)
 {
 	assert(buf);
